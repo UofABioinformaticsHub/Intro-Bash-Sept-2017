@@ -16,8 +16,9 @@ University of Adelaide
 
 # Computer Setup
 
-- Ubuntu Installation Instructions can be found [here](install/ubuntuInstall)
 - Windows Installation Instructions can be found [here](install/windowsInstall)
 - OSX Installation Instructions can be found [here](install/osxInstall)
+
+If you are running `Ubuntu` or another Linux distro, your computer will already be setup ready to go.
 
 [Back To Top](#introduction-to-bash)
