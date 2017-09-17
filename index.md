@@ -14,6 +14,7 @@ University of Adelaide
 
 - [1 Introduction](notes/1_Introduction)
 - [2 Bash](notes/2_Bash)
-- [3 Regular Expressions](notes/3_RegularExpressions)
+- [3 More Commands](notes/3_MoreCommands)
+- [4 Regular Expressions](notes/4_RegularExpressions)
 
 [Back To Top](#introduction-to-bash)
