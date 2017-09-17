@@ -496,61 +496,58 @@ Did you remember this trick?*
 
 Later today, we’re going to look through a file containing a list of words.
 Let's download this from the internet and place it in our `Bash_Workshop` folder.
+(Feel free to copy & paste the url to the file. It's pretty long.)
 
 ```
 cd ~/Bash_Workshop
-wget 
+wget https://uofabioinformaticshub.github.io/Intro-Bash-Sept-2017/files/american-english
 ```
 
+The name for this file isn't as convenient as we'd like, so we can use the command `mv` to rename it.
+Note that under `bash` to rename a file, we *move* it to the same folder, but with a different filename.
+This is a slightly unconventional way to think about renaming, but once you get used to it it does make sense.
 
+```
+mv american-english words
+```
 
-your VM in the folder /usr/share/dict and has the name cracklib-small. Let’s copy
-this to your firstname folder, in your home directory.
-cp /usr/share/dict/cracklib-small
-/firstname
-Next we will rename the file. Note, that in bash there is no “rename” tool. Instead we
-“move” from it’s current location to any location we choose, with whatever name we choose.
-In the following, the location is the same so we are effectively just giving the file a new name.
-29Introducing The Command Line
-mv
-/firstname/cracklib-small
-Putting It All Together
-/firstname/words
 We can look at the first 5 lines of the file using
-head -n5
-/firstname/words
+
+```
+head -n5 words
+```
+
 Or we can look at the last 10 lines of the file using
-tail -n10
-/firstname/words
-We could even page through the file using less. (Remember to hit q to exit the pager.)
-less
-/firstname/words
+
+```
+tail -n10 words
+```
+
+We could even page through the file using `less`. (Remember to hit q to exit the pager.)
+
+```
+less words
+```
+
 We can even find how many lines there are in the file by using
-wc -l
-/firstname/words
 
+```
+wc -l words
+```
 
+We'll come back to this file in the next section when we explore regular expressions.
 
+### Task
+{.:no_toc}
 
-
-
-
-
-
-
-
-
-
-
-Now we've learned about a large number of commands, let's try performing something useful.
-We'll download a file from the internet, then look through the file.
-**In each step remember to add the filename if it's not given!**
+Let's try a new task.
+However, this time you'll have to think of the commands yourself.
 
 1. Use the `cd` command to make sure you are in the folder `Bash_Workshop`
 2. Use the command `wget` to download the `gff` file `ftp://ftp.ensembl.org/pub/release-89/gff3/drosophila_melanogaster/Drosophila_melanogaster.BDGP6.89.gff3.gz`
 3. Now unzip this file using the command `gunzip`.
 (Hint: After typing `gunzip`, use tab auto-complete to add the file name.)
-4. Change the name of the file to `dm6.gff` using the command `mv Drosophila_melanogaster.BDGP6.89.gff3 dm6.gff`
+4. Change the name of the file to `dm6.gff` using the command `mv`
 5. Look at the first 10 lines using the `head` command
 6. Change this to the first 5 lines using `head -n5`
 7. Look at the end of the file using the command `tail`
