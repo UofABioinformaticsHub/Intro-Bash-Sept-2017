@@ -117,3 +117,44 @@ In most of the above commands we used the option `-E` to specify the extended ve
 An alternative to this is to simply use the command `egrep`, which is the same as `grep -E`.
 Repeat a few of the above commands using `egrep` instead of `grep -E`.
 This is actually the default command that many bioinformaticians use.
+
+## Regular Expressions In a Biological Context
+
+The `gff` file we have downloaded and renamed earlier (`dm6.gff`) contains all the genomic features from the latest build of the *D. melanogaster* genome.
+Each feature is on a separate line, but if you remember from your preview there are several lines which start with the comment character `#`.
+These are lines which contain important information about the file, but don't contain any information about genomic features themselves.
+If we just wanted to look at these lines, the obvious thing to do would be to use a `regexp` search for lines beginning with `#`, via the `^#` syntax.
+
+```
+egrep -n '^#' dm6.gff
+```
+
+Note that this will print the line numbers.
+*Were all these lines at the beginnning of the file?*
+
+### Regular Expressions Task 1
+{:.no_toc}
+
+Knowing that each line (except for the comments) is a feature how could we count how many features are in this file?
+There are 3 methods for doing this.
+An obvious solution would be to find all lines which do not begin with `#` then pipe the results into `wc -l`.
+The other two methods would perform this in `egrep`.
+*Can you think of all 3?*
+
+(*Hint: What to the `egrep` options `-c` and `-v` do?*)
+
+### Regular Expressions Task 2
+{:.no_toc}
+
+Let's obtain another *D.melanogaster* file.
+This time we'll get all *ncRNA* sequences from the Ensembl database.
+
+```
+wget ftp://ftp.ensembl.org/pub/release-90/fasta/drosophila_melanogaster/ncrna/Drosophila_melanogaster.BDGP6.ncrna.fa.gz
+```
+
+As we know, all fasta sequences start with a fasta header so our task is to place these in a separate file called `seqIDs.txt`.
+However, when we create the file include a comment line at the beginnning with today's data and the Ensembl release number.
+As you can imagine, this would be a sensible approach to take when creating files like this.
+
+(*Hint: You may need to use the `>>` command before using `egrep`)

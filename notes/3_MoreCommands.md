@@ -191,7 +191,9 @@ ls -R /usr/bin | less
 
 Page through this for a while, then when you're bored quit using the `q` key.
 
-## Copying a File
+# Working with Files
+
+## Copying a File (`cp`)
 
 Copying a file using `bash` is so easy it hardly requires any effort.
 The command simply follows the syntax `cp sourceFile destinationFile`.
@@ -208,17 +210,18 @@ We don't need these anymore, so let's be brave and delete both.
 rm hello*
 ```
 
-
-## Renaming a File
+## Downloading a File (`wget`)
 
 Later today, we’re going to look through a file containing a list of words.
-Let's download this from the internet and place it in our `Bash_Workshop` folder, using the command `wget`
+Let's download this from the internet and place it in our `Bash_Workshop` folder, using the command `wget`, which stands for `web get`.
 (Feel free to copy & paste the url to the file. It's pretty long.)
 
 ```
 cd ~/Bash_Workshop
 wget https://uofabioinformaticshub.github.io/Intro-Bash-Sept-2017/files/american-english
 ```
+
+## Renaming a File (`mv`)
 
 The name for this file isn't as convenient as we'd like, so we can use the command `mv` to rename it as the file `words` instead of `american-english`.
 Note that under `bash` to rename a file, we *move* it to the same folder, but with a different filename.
@@ -275,10 +278,7 @@ A very useful trick is the use of the command `zcat`.
 This extracts a `gzip` compressed file to `stdout` leaving the original file unchanged.
 From here we can pipe (&#124;) into `less` or `head` to quickly look through a file before extracting.
 
-
-# Putting It All Together
-
-### Task
+### Task 1
 {:.no_toc}
 
 Let's try a new task.
@@ -286,7 +286,7 @@ However, this time you'll have to think of how to execute the commands yourself.
 
 1. Use the `cd` command to make sure you are in the folder `Bash_Workshop`
 2. Use the command `wget` to download the compressed `gff` file `ftp://ftp.ensembl.org/pub/release-89/gff3/drosophila_melanogaster/Drosophila_melanogaster.BDGP6.89.gff3.gz`
-3. Preview the file before extracting using `zcat` and `head` and the pipe symbol (&#124;)
+3. Preview the file before extracting using `zcat` and `head` along with the pipe symbol (&#124;)
 4. Now unzip this file using the command `gunzip`.
 (*Hint: After typing `gunzip`, use tab auto-complete to add the file name*.)
 5. Change the name of the file to `dm6.gff` using the command `mv`
@@ -296,4 +296,61 @@ However, this time you'll have to think of how to execute the commands yourself.
 9. Page through the file using the pager `less`
 10. Count how many lines are in the file using the command `wc -l`
 
-We'll refer to this file again later, so please don't delete this one.
+# Working With Tabular Files
+
+The file we have just downloaded begins with comment lines (starting with `#`) then follows a column layout, with columns being separated by `<tab>` markers.
+As each line can be very long, they may wrap across more than one line.
+Make sure you can spot this format though.
+
+## Extracting Columns (`cut`)
+
+We can use the command `cut` to cut one or more columns from this file.
+Call up the `man` page.
+
+```
+man cut
+```
+
+(And if you think that sounds violent, try `man kill` or `man killall`)
+
+We introduced this earlier, and the options we're interested in now are `-f` and `-s`.
+*Why is the `-s` command relevant here?*
+
+The third column contains information about what type of feature is on each line.
+We can get just this column using the following.
+
+```
+cut -f3 -s dm6.gff
+```
+
+This will just dump all the information to `stdout`.
+In the next couple of sections we'll sort then count these entries
+
+## Sorting Data (`sort`)
+
+This command is one of the most intuitive to use so requires little explanation.
+Let's pipe the out of the previous cut into the `sort` command.
+
+```
+cut -f3 -s dm6.gff | sort
+```
+
+This has sorted all the type into alphabetic order
+
+## Getting Unique Entries (`uniq`)
+
+Now we have these sorted we can use the command  `uniq` to just return a single entry for each feature type.
+
+```
+cut -f3 -s dm6.gff | sort | uniq
+```
+
+This has given us a simple list of the different feature types in this file.
+We can also count these using the `-c` option.
+
+```
+cut -f3 -s dm6.gff | sort | uniq -c
+```
+
+*What would happen if we didn't include the `sort` step?  
+What does this tell us about how the `uniq` command works?*
