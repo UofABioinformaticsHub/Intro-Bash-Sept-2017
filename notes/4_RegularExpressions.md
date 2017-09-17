@@ -139,6 +139,7 @@ Knowing that each line (except for the comments) is a feature how could we count
 There are 3 methods for doing this.
 An obvious solution would be to find all lines which do not begin with `#` then pipe the results into `wc -l`.
 The other two methods would perform this in `egrep`.
+
 *Can you think of all 3?*
 
 (*Hint: What to the `egrep` options `-c` and `-v` do?*)
@@ -157,4 +158,7 @@ As we know, all fasta sequences start with a fasta header so our task is to plac
 However, when we create the file include a comment line at the beginnning with today's data and the Ensembl release number.
 As you can imagine, this would be a sensible approach to take when creating files like this.
 
-(*Hint: You may need to use the `>>` command before using `egrep`)
+(*Hint: You may need to use the `>>` command before using `egrep`*)
+
+
+[Home](../)

@@ -16,5 +16,6 @@ University of Adelaide
 - [2 Bash](notes/2_Bash)
 - [3 More Commands](notes/3_MoreCommands)
 - [4 Regular Expressions](notes/4_RegularExpressions)
+- [5 Using `sed` and `awk`](notes/5_SedAwk)
 
 [Back To Top](#introduction-to-bash)

@@ -170,16 +170,14 @@ Among them should be the `/home` directory which is one level above your own hom
 This is actually where the home directories for all users are located and your home folder will be within this folder under your login name.
 It's important to be aware that `/home` and your home folder `~` are actually two separate (but related) locations.
 
-## Question
+### Question
 {:.no_toc}
 
  Try to think of two ways we could inspect the contents of the `/home` directory from your own home directory.
 
-<div style="font-color:blue">
 *Hint:
 When working in the terminal, you can scroll through your previous commands by using the up arrow to go backward, and the down arrow to move forward.
 This can be a big time saver if you've typed a long command with a simple typo, or if you have to do a series of similar commands.*
-</div>
 
 ## Creating a New Directory (`mkdir`)
 
@@ -337,7 +335,7 @@ Although we can navigate through the `less` pager using up & down arrows on our 
 
 Look through the manual page for the `ls` command and answer the following question:
 
-## Question
+### Question
 {:.no_toc}
 
 *If we wanted to hide the group names in the long listing format, which extra options would we need set when searching our home directory?*
@@ -370,8 +368,10 @@ It's very much like picking up a piece of paper to see what's under it.
 If you don't find something  at first, just keep looking and you'll find it eventually.*
 
 
-### Questions
+### Question
 {:.no_toc}
 
 Try accessing the manual for the command `man` all three ways.
 *Was there a difference in the output depending on how we asked to view the manual?*
+
+[Home](../)

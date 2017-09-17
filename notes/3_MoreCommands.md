@@ -66,7 +66,7 @@ We can read it, but it won’t have anything in it, as it's an empty file.
 cat blank.txt
 ```
 
-Let's delete it as it's really a bit pointless.
+Let's delete it as it's really a bit of a pointless file.
 
 ```
 rm blank.txt
@@ -116,6 +116,8 @@ Now enter
 ```
 echo ~
 ```
+### Question
+{:.no_toc}
 
 *Why did this happen?*
 
@@ -164,7 +166,7 @@ We can also check how many lines we have in this file using the command `wc`.
 wc hello.txt
 ```
 
-### Question
+### Questions
 {:.no_toc}
 
 *In the previous line, what do the three numbers represent?*
@@ -314,6 +316,9 @@ man cut
 (And if you think that sounds violent, try `man kill` or `man killall`)
 
 We introduced this earlier, and the options we're interested in now are `-f` and `-s`.
+
+### Question
+{:.no_toc}
 *Why is the `-s` command relevant here?*
 
 The third column contains information about what type of feature is on each line.
@@ -352,5 +357,7 @@ We can also count these using the `-c` option.
 cut -f3 -s dm6.gff | sort | uniq -c
 ```
 
-*What would happen if we didn't include the `sort` step?  
+### Questions
+{:.no_toc}
+*What would happen if we didn't include the `sort` step?<br>
 What does this tell us about how the `uniq` command works?*
