@@ -138,7 +138,7 @@ Now we know how to navigate folders using `bash` instead of the GUI.
 This is an essential skill when logged into an HPC or a VM.
 
 ### Important
-{.:no_toc}
+{:.no_toc}
 
 *Although we haven't directly discovered it yet, a Linux-based file system such as Ubuntu or Mac OS-X is also* **case-sensitive**, *whilst Windows is not.
 For example, the command `PWD` is completely different to `pwd` and if `PWD` is the name of a command which has been defined in your shell, you will get completely different results than from the intended `pwd` command.*
@@ -170,7 +170,7 @@ This is actually where the home directories for all users are located and your h
 It's important to be aware that `/home` and your home folder `~` are actually two separate (but related) locations.
 
 ## Question
-{.:no_toc}
+{:.no_toc}
 
  Try to think of two ways we could inspect the contents of the `/home` directory from your own home directory.
 
@@ -337,7 +337,7 @@ Although we can navigate through the `less` pager using up & down arrows on our 
 Look through the manual page for the `ls` command and answer the following question:
 
 ## Question
-{.:no_toc}
+{:.no_toc}
 
 *If we wanted to hide the group names in the long listing format, which extra options would we need set when searching our home directory?*
 
@@ -370,7 +370,7 @@ If you don't find something  at first, just keep looking and you'll find it even
 
 
 ### Questions
-{.:no_toc}
+{:.no_toc}
 
 Try accessing the manual for the command `man` all three ways.
 *Was there a difference in the output depending on how we asked to view the manual?*
@@ -472,7 +472,7 @@ wc hello.txt
 ```
 
 ### Question
-{.:no_toc}
+{:.no_toc}
 
 *In the previous line, what do the three numbers represent?*
 
@@ -538,7 +538,7 @@ wc -l words
 We'll come back to this file in the next section when we explore regular expressions.
 
 ### Task
-{.:no_toc}
+{:.no_toc}
 
 Let's try a new task.
 However, this time you'll have to think of the commands yourself.
