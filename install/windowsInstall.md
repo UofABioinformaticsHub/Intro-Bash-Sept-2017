@@ -33,4 +33,4 @@ wget --version
 
 If you receive an error message **use the post-it notes** to ask for help from an instructor
 
-[Home](../../)
+[Home](../)
