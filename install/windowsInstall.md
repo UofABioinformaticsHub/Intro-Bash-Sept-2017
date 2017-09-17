@@ -1,47 +1,36 @@
-* TOC
-{:toc}
-
 # Important
 
 If you are running a University administered machine, you will hopefully have pre-configured your machine.
 The following installations will only be able to be performed if you have Administration privileges on your computer.
 If you have not pre-configured your machine, we will provide you with an USB containing a live install of Ubuntu for you to use.
 
-# Windows 10 (64-bit)
+# Installation on Windows
 
-Your PC must be running a 64-bit version of Windows 10 Anniversary Update or later (build 1607+).
+f you are running Windows 10 and have already installed Ubuntu as an app, please use this in preference to the below.
+Otherwise, please follow the instructions below to install a working version of bash on your computer.
 
-To find your PC's architecture and Windows build number, open
-`Settings > System > About`
+1. Install `git bash` by going to the following site: [https://git-for-windows.github.io/](https://git-for-windows.github.io/)
+2. When presented with this screen, select the first option
 
-Look for the OS Build and System Type fields.
+![](https://blog.assembla.com/hs-fs/hub/365/file-2182891772-png/Blog/Git_on_windows_blog/Git_adjustPath.png?t=1505570223016)
 
-![](https://i-msdn.sec.s-msft.com/en-us/commandline/wsl/media/system.png)
+3. Accept defaults for all other options, especially the following:
 
-If you have a compatible system, you are able to install the additional Operating System, known as Ubuntu.
-This is a Linux operating system which usually runs independently of Windows, however this version has recently been made available which runs just like a normal app or program within Windows.
-To install this, please follow this link (https://www.microsoft.com/en-au/store/p/ubuntu/9nblggh4msv6?rtc=1) and install the app.
-Unfortunately you'll have to join up to the Windows Insider program for some ridiculous reason.
+![](https://blog.assembla.com/hs-fs/hub/365/file-2181997909-png/Blog/Git_on_windows_blog/Git_Configure_LineEndings.png?t=1505570223016)
 
-After installation, this will open a terminal running bash whenever you open Ubuntu.
-If you are having troubles, call an instructor over.
-
-# Other Versions of Windows
-
-If you are running Windows 7 or 8, you can install `git bash` by going to the following site: https://git-for-windows.github.io/
-Please install using all default settings, so just enter OK when asked any confusing questions.
-
-After installation, you will have to install the additional tool called `wget`.
+After installation, you will need to install the additional tool called `wget`.
 To perform this installation
 
-1. download the `v1.19.1` 32 or 62-bit file ending in `.exe`
-2. Move this file to `C:\Program Files\Git\mingw64\bin\`
-3. If you downloaded the file `wget64.exe`, please rename the file as `wget.exe`
+1. Download the [32-bit](https://eternallybored.org/misc/wget/current/wget.exe) or [62-bit](https://eternallybored.org/misc/wget/current/wget64.exe) file ending in `.exe`
+2. If you downloaded the file `wget64.exe`, please rename the file as `wget.exe`
+3. Move this file to `C:\Program Files\Git\mingw64\bin\`
 
-Once you have completed this installation, open Git Bash and enter the following in the terminal which opens
+Once you have completed the installation, open Git Bash and enter the following in the terminal
 
 ```
 wget --version
 ```
 
-If you receive an error message use the post-it notes to ask for help from an instructor
+If you receive an error message **use the post-it notes** to ask for help from an instructor
+
+[Home](../../)
