@@ -1,7 +1,7 @@
 * TOC
 {:toc}
 
-# sed: The Stream Editor
+# `sed`: The Stream Editor
 
 One very useful command in the terminal is `sed`, which is short for *stream editor*.
 Instead of the `man` page for `sed` the `info sed` page is larger but a little easier to digest.
@@ -18,7 +18,9 @@ For today, there are two key `sed` functionalities that we want to introduce.
 ## Altering a file or other input
 
 `sed` uses *regular expressions* that we have come across under the `grep` section, and we can use these to replace strings or characters within a text string.
-The command works in the form `sed 'SCRIPT' INPUT`, and the script section is where all the action happens.
+The command works in the form  
+`sed 'SCRIPT' INPUT`  
+and the script section is where all the action happens.
 Input can be given to `sed` as either a file, or just as a text stream via the *pipe* that we have already introduced.
 
 In the following example the script begins with an `s` to indicate that we are going to make a substitution.
@@ -132,12 +134,12 @@ All commands like `do`, `if` or `case` have completing statements, which
 respectively are `done`, `fi` & `esac`.
 
 Another important concept which was glossed over in the previous paragraph is that of a **variable**.
-These are essentially just ‘placeholders’ which have a value that can change (hence the name).
+These are essentially just ‘place holders’ which have a value that can change (hence the name).
 In the above loop, the same operation was performed on the variable `i`, but the value changed from 1 to 2 to 3.
 Variables in shell scripts can hold numbers or text strings (e.g. file names) and don’t have to be formally defined as in some other languages.
 
 An alternate approach could be to make a breathtaking claim about some files.
-Here we’ll use the variable called `f`, which seems sensible for a filename.
+Here we’ll use the variable called `f`, which seems sensible for a file name.
 
 ```
 cd ~/Bash_Workshop
@@ -153,8 +155,8 @@ Single quotes at this point would only return the characters `$f`.
 If statements are those which only have a binary ‘yes’ or ‘no’ response, or more correctly a `TRUE` or `FALSE` response.
 For example, we could specify things like:
 
-• `if (i> 1)` then `do` something, or
-• `if (fileName==bob.txt)` then `do` something else
+- `if (i> 1)` then `do` something, or
+- `if (fileName==bob.txt)` then `do` something else
 
 Notice that in the second if statement, there was a double equals sign (`==`).
 This is the programmers way of saying compare the first argument with the second argument.
@@ -164,17 +166,17 @@ This use of ‘double operators’ is very common, notably you will see `&&` to 
 A final useful trick to be aware of is the use of an exclamation mark to reverse a command.
 A good example of this is the use of the command `!=` as the representation of *not equal to* in a logical test.
 
-# awk: A command and a language
+# `awk`: A command and a language
 
-Moving on to awk, this is a very useful tool which can be used either as a command, as well as functioning as it’s own language.
+Moving on to `awk`, this is a very useful tool which can be used either as a command, as well as functioning as it’s own language.
 We’ll just use it as a command today, and it is extremely useful for dealing with tab- or comma-separated files, such as we often see in biological data.
 
-The basic structure of an awk command is:  
+The basic structure of an `awk` command is:  
 `awk '/<pattern>/' file`  
 
 `awk` will then search the file and output any line containing the regular expression pattern (kind of like `grep`).
 
-With awk, you can also use the format:  
+With `awk`, you can also use the format:  
 
 `awk '\{<code>\}' file`
 

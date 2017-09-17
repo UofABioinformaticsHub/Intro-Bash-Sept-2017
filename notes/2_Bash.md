@@ -13,7 +13,7 @@
 An important step in many analyses is moving data around on a high-performance computer (HPC), and setting jobs running that can take hours, days or even weeks to perform.
 For this, we need to learn how to write scripts which perform these actions, and the primary language for this is `bash`.
 
-We can utilise `bash`in two primary ways:
+We can utilise `bash` in two primary ways:
 
 1. Interactively through the terminal
 2. Through a script which manages various stages of an analysis
@@ -32,13 +32,13 @@ If you’ve ever heard of the phrase *shell scripts*, this refers to a series of
 
 # Finding your way around
 
-Firstly we need to open a terminal as we did during the setup steps.
+Firstly we need to open a terminal as we did during the set-up steps.
 You will notice some text describing your computer of the form
 
  `user@computer:~$`
 
 
-The tilde represents your current directory (see below), whilst the dollar sign just indicates the end of the address & the beginning of where you will type commands.
+The tilde (`~`) represents your current directory (see below), whilst the dollar sign just indicates the end of the address & the beginning of where you will type commands.
 This is the standard interface for the Bourne-again Shell, or `bash`.
 (Historically, `bash` is a replacement for the earlier Bourne Shell, written by Stephen Bourne, so the name is actually a hilarious pun.)
 We'll explore a few important commands below, and the words shell and bash will often be used interchangeably with the terminal window.

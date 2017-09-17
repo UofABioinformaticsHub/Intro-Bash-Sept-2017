@@ -19,8 +19,7 @@ Some additional resources run by the Bioinformatics Hub which may be of interest
 - A Twitter account https://twitter.com/UofABioinfoHub/
 - An active Slack team for discussing Bioinformatics questions with the local community. Slack teams do require an invitation to join, so please email the Hub on bioinf_hub@adelaide.edu.au to join the community. All are welcome.
 
-Today’s workshop has been put together based on previous material and courses prepared by Dr Stephen Bent (University of Queensland), with generous technical support & advice provided by Dr Nathan Watson-Haigh (ACPFG) and Dr Dan Kortschak (Adelaide
-University, Adelson Research Group).
+Today’s workshop has been put together based on previous material and courses prepared by Dr Stephen Bent (University of Queensland), with generous technical support & advice provided by Dr Nathan Watson-Haigh and Dr Dan Kortschak.
 We hope it will be useful in enabling you to continue and to advance your research.
 
 ## Course Summary
@@ -50,7 +49,7 @@ Today your helpers will be
 ## Recommendations For Working
 
 In the following pages, we strongly encourage you to manually type all commands.
-The mistakes you will inevitably make will actually be imortant learning steps.
+The mistakes you will inevitably make will actually be important learning steps.
 Additionally, in your work beyond today, you will probably not have any instructions to follow.
 The experience of typing these commands will equip you for future work far better than if you simply copy & paste.
 
@@ -62,16 +61,16 @@ This will be important as we all set our computers up in the following section.
 ## Computer Setup
 
 Previously we have run these sessions using Virtual Machines, but today we are opting for running all sessions using the tools locally installed on your own machines today.
-*As there will be a huge variety of laptops in the room, the intitial setup may be a difficult to begin with*, but will settle as the day progresses.
-Althugh this will present numerous challenges from our perspective, we feel this is a better approach as everyone will leave knowing exactly how to get the ball rolling on their own familiar systems.
+*As there will be a huge variety of laptops in the room, the initial set-up may be a difficult to begin with*, but will settle as the day progresses.
+Although this will present numerous challenges from our perspective, we feel this is a better approach as everyone will leave knowing exactly how to get the ball rolling on their own familiar systems.
 
-Instructions for how to setup everything on your own machine are at the following pages.
+Instructions for how to set-up everything on your own machine are at the following pages.
 Please follow these very carefully, and call an instructor over if you have trouble.
-In particular, the Windows setups may take a while to get sorted.
+In particular, the Windows set-ups may take a while to get sorted.
 
 - [Mac/OSX](../install/osxInstall)
 - [Windows](../install/windowsInstall)
 
-If you are already running Ubuntu, your computer will already be setup correctly.
+If you are already running Ubuntu, your computer will already be set-up correctly.
 
 [Home](../)

@@ -14,7 +14,7 @@ Most of us are familiar with searching for a word within a file, but regular exp
 As we will see, we could search for a sequence that is either `AGT` or `ACT` by using the patterns  `A[GC]T` or  `A(G|C)T`.
 These two patterns will search for an  `A`, followed by either a  `G` or  `C`, then followed strictly by a  `T`.
 Similarly a match to `ANNT` can be found by using the patterns `A[AGCT][AGCT]T` or  `A[AGCT]{2}T`.
-We'll dicuss that syntax below, so don't worry if those patterns didn't make much sense.
+We'll discuss that syntax below, so don't worry if those patterns didn't make much sense.
 
 Whilst the bash shell has a great capacity for searching a file to matches to regular expressions, this is where languages like *perl* and *python* offer a great degree more power.
 The commands `awk` & `sed` which we will look at later also use regular expressions to great effect.
@@ -130,7 +130,7 @@ egrep -n '^#' dm6.gff
 ```
 
 Note that this will print the line numbers.
-*Were all these lines at the beginnning of the file?*
+*Were all these lines at the beginning of the file?*
 
 ### Regular Expressions Task 1
 {:.no_toc}
@@ -155,7 +155,7 @@ wget ftp://ftp.ensembl.org/pub/release-90/fasta/drosophila_melanogaster/ncrna/Dr
 ```
 
 As we know, all fasta sequences start with a fasta header so our task is to place these in a separate file called `seqIDs.txt`.
-However, when we create the file include a comment line at the beginnning with today's data and the Ensembl release number.
+However, when we create the file include a comment line at the beginning with today's data and the Ensembl release number.
 As you can imagine, this would be a sensible approach to take when creating files like this.
 
 (*Hint: You may need to use the `>>` command before using `egrep`*)

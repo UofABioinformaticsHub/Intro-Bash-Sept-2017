@@ -78,7 +78,7 @@ rm blank.txt
 
 All the information we've seen in the terminal so far has been from a data stream known as *standard output*, or `stdout` for short.
 There are two primary data streams in play when we use commands in `bash`.
-The first as we've seen is `stdout`, with the alternative stream bing *standard error*, or `stderr` for short.
+The first as we've seen is `stdout`, with the alternative stream being *standard error*, or `stderr` for short.
 This is where commands and tools send their error messages.
 We'll ignore that for the rest of the day, but it's good to know it exists.
 
@@ -128,7 +128,7 @@ As we'll see later today, `echo` is actually a very heavily used command.
 ## Redirecting `stdout` To a File
 
 Instead of just sending the output of a command to `stdout`, we can redirect this output into a file using the `>` symbol.
-If the file doesn't exist, `bash` will sinply create the specified file and write the output into it.
+If the file doesn't exist, `bash` will simply create the specified file and write the output into it.
 If the file *does* exist, **it will be immediately overwritten without any warnings**.
 
 Let's see the `>` symbol in action.
@@ -206,7 +206,7 @@ By way of simple example
 cp hello.txt hello.txt-copy
 ```
 
-We don't need these anymore, so let's be brave and delete both.
+We don't need these any more, so let's be brave and delete both.
 
 ```
 rm hello*
@@ -226,7 +226,7 @@ wget https://uofabioinformaticshub.github.io/Intro-Bash-Sept-2017/files/american
 ## Renaming a File (`mv`)
 
 The name for this file isn't as convenient as we'd like, so we can use the command `mv` to rename it as the file `words` instead of `american-english`.
-Note that under `bash` to rename a file, we *move* it to the same folder, but with a different filename.
+Note that under `bash` to rename a file, we *move* it to the same folder, but with a different file name.
 This is a slightly unconventional way to think about renaming, but once you get used to it, it does make sense.
 
 ```
