@@ -1,4 +1,4 @@
-# Session 1: Introduction to Bash
+# Introduction and Setup
 {:.no_toc}
 
 * TOC
@@ -74,4 +74,4 @@ In particular, the Windows setups may take a while to get sorted.
 
 If you are already running Ubuntu, your computer will already be setup correctly.
 
-[Back](../index)
+[Home](../)
