@@ -46,7 +46,7 @@ Our apologies to any purists.
 
 If you've ever heard of the phrase `shell scripts`, this refers to a series of commands strung together into a text file which is then able to be run as a single process.
 
-## `pwd`: Where are we?
+## Where are we? (`pwd`)
 
 Type the command `pwd` in the terminal and you will see the output which describes the `home` directory for your login.
 
@@ -63,7 +63,7 @@ On a Linux-based system, this is considered to be the root directory of the file
 Windows users would be more familiar with seeing `C:\` as the root of the drive, and this is an important difference in the two directory structures.
 Note also that whilst Windows uses the backslash (\\) to indicate a new directory, a Linux-based system uses the forward slash (/), or more commonly just referred to simply as `slash`, marking another but very important difference between the two.
 
-## `cd`: Changing Directories
+## Changing Directories (`cd`)
 
 **Open your normal file/directory browser** and change to the directory indicated by the `pwd` command.
 In this section we will learn how to change directories using `bash`.
@@ -143,7 +143,7 @@ This is an essential skill when logged into an HPC or a VM.
 *Although we haven't directly discovered it yet, a Linux-based file system such as Ubuntu or Mac OS-X is also* **case-sensitive**, *whilst Windows is not.
 For example, the command `PWD` is completely different to `pwd` and if `PWD` is the name of a command which has been defined in your shell, you will get completely different results than from the intended `pwd` command.*
 
-## `ls`: Looking at the Contents of a Directory
+## Looking at the Contents of a Directory (`ls`)
 
 There is another built-in command `ls` that we can use to **list** the contents of a directory.
 This is a way to get our familiar folder view in the terminal.
@@ -180,7 +180,7 @@ When working in the terminal, you can scroll through your previous commands by u
 This can be a big time saver if you've typed a long command with a simple typo, or if you have to do a series of similar commands.*
 </div>
 
-## `mkdir`: Creating a New Directory
+## Creating a New Directory (`mkdir`)
 
 Now we know how to move around and view the contents of a directory, we should learn how to create a new directory using bash instead of the GUI folder you are used to.
 If you already have a directory for this course, navigate to this directory using the `cd` command, remembering that your home directory is represented by the `~` symbol.
@@ -216,6 +216,8 @@ The above will give one or more lines of output, and one of the first lines shou
 `drwxrwxr-x 2 your_login_name your_login_name 4096 Aug 7 hh:mm Bash_Workshop`
 
 where `mmm dd hh:mm` are time and date information.
+
+## File Permissions
 
 The letter `d` at the beginning of the initial string of codes `drwxr-xr-x` indicates that this is a *directory*.
 Most often, these letters are known as flags which identify key attributes about each file or directory, and beyond the first flag (`d`) they appear in strict triplets.
@@ -280,9 +282,7 @@ ls -lhR ~
 This can often save some time, but it is worth noting that not all programmers write their commands in such a way that this convention can be followed.
 The built-in shell commands are usually fine with this, but many NGS data processing functions do not accept this convention.
 
-<div style="font-color:blue">
-## How To Not Panic
-{:.no_toc}
+## The *Panic* Button
 
 It's easy for things to go wrong when working in the command-line, but if you've accidentally:
 
@@ -304,7 +304,7 @@ However, sometimes `Ctrl+c` doesn't work but `Ctrl+d` or `Ctrl+z` does.
 
 A good example would be if you are curious and want to see what happens if you typed `ls -R /`.
 As this would dump the entire contents of your computer onto the screen, you can kill the process at any time by entering `Ctrl+c`.
-</div>
+
 
 # Manuals and Help Pages
 
@@ -362,20 +362,37 @@ Note the convention of a single hyphen which indicates an individual letter will
 Unfortunately the methods can vary a little from command to command, so if one method doesn't get you the manual, just try one of the others.
 We've already seen that the `-h` option for `ls` won't be likely to get you the help page.
 
-<div style="font-color:blue">
+
 *Hint:
 Sometimes it can take a little bit of looking to find something and it's important to be realise we won't break the computer or accidentally launch a nuclear bomb when we look around.
 It's very much like picking up a piece of paper to see what's under it.
 If you don't find something  at first, just keep looking and you'll find it eventually.*
-</div>
 
-## Questions
+
+### Questions
 {:.no_toc}
 
 Try accessing the manual for the command `man` all three ways.
 *Was there a difference in the output depending on how we asked to view the manual?*
 
-# Some More Useful Tricks & Commands
+# Some More Useful Commands
+
+## Tab auto-complete
+
+A very helpful & time-saving tool in `bash` is the ability to automatically complete a command, file or directory name using the `<tab>` key.
+Move the the directory above the `Bash_Workshop` directory using the `cd` command.
+(If you're already in this directory, you'll simply need `cd ..`).
+
+Now **try typing `ls Bash` & then hit the `<tab>` key**.
+Notice how `Bash_Workshop` is completed automatically!
+This functionality will automatically fill as far as it can until conflicting options are reached.
+In this case, there was only one option so it was able to complete all the way to the end of the file path.
+Where multiple options are present, you can hit the `<tab>` key twice and all options will be given to you.
+
+This can be used to also find command names.
+Type in `he` followed by two strikes of the `<tab>` key and it will show you all of the commands that begin with the string `he`, such as `head`, `help` or any others that may be installed on your computer.
+If we'd hit the `<tab>` key after typing `hea`, then the command `head` would have auto-completed, although clearly this wouldn't have saved you any typing.
+
 
 ## A series of commands to look up
 
@@ -408,29 +425,122 @@ Write your answers on a piece of paper, or in a plain text file.
 | `wget`      |                               |                    |
 
 
-<div style="font-color:blue">
 *Hint:
 Sometimes the side effects of a command can also be useful.
 For example, we can also use `touch` to create an empty file using the command string `touch filename`.*
-</div>
 
-## Tab auto-complete
-
-A very helpful & time-saving tool in `bash` is the ability to automatically complete a command, file or directory name using the `<tab>` key.
-Move the the directory above the `Bash_Workshop` directory using the `cd` command.
-(If you're already in this directory, you'll simply need `cd ..`).
-
-Now **try typing `ls Bash` & then hit the `<tab>` key**.
-Notice how `Bash_Workshop` is completed automatically!
-This functionality will automatically fill as far as it can until conflicting options are reached.
-In this case, there was only one option so it was able to complete all the way to the end of the file path.
-Where multiple options are present, you can hit the `<tab>` key twice and all options will be given to you.
-
-This can be used to also find command names.
-Type in `he` followed by two strikes of the `<tab>` key and it will show you all of the commands that begin with the string `he`, such as `head`, `help` or any others that may be installed on your computer.
-If we'd hit the `<tab>` key after typing `hea`, then the command `head` would have auto-completed, although clearly this wouldn't have saved you any typing.
 
 # Putting It All Together
+
+Now we can use some the above commands to perform something useful.
+
+## Creating and Viewing a File
+
+First, let’s make sure we're in `~/Bash_Workshop`
+
+```
+cd ~/Bash_Workshop
+```
+
+Remember you can use *tab-autocomplete* once you've started typing that directory name
+
+
+Now we'll create an empty text file.
+(Check the man page for touch if you’re not sure about this line.)
+
+```
+touch hello.txt
+```
+
+We can read it, but it won’t have anything in it yet.
+```
+cat hello.txt
+```
+
+Obviously nothing was printed to your terminal in the previous line because the file is empty.
+Let’s write something to the file, then try reading it again.
+In the following line, the symbol `>>` places the text at the end of whatever is already in the file.
+As the file is currently empty, this will just write a single line.
+```
+echo "Hello" >> hello.txt
+cat hello.txt
+```
+
+We can find a whole lot of information about the file.
+```
+wc hello.txt
+```
+
+### Question
+{.:no_toc}
+
+*In the previous line, what do the three numbers represent?*
+
+
+When we added the word `Hello` to our file, we used the symbol `>>` which actually wrote the word to the end of the file.
+As the file was completely empty, this placed the word in the first line.
+This is a *VERY* handy short-cut for writing information to the end of a file.
+
+Now let’s add more to the file.
+```
+echo "It's me" >> hello.txt
+cat hello.txt
+wc hello.txt
+```
+
+*For the last two of the above commands we could have used the auto-complete feature of the
+bash terminal.
+Did you remember this trick?*
+
+## Copying and Renaming a File
+
+Later today, we’re going to look through a file containing a list of words.
+Let's download this from the internet and place it in our `Bash_Workshop` folder.
+
+```
+cd ~/Bash_Workshop
+wget 
+```
+
+
+
+your VM in the folder /usr/share/dict and has the name cracklib-small. Let’s copy
+this to your firstname folder, in your home directory.
+cp /usr/share/dict/cracklib-small
+/firstname
+Next we will rename the file. Note, that in bash there is no “rename” tool. Instead we
+“move” from it’s current location to any location we choose, with whatever name we choose.
+In the following, the location is the same so we are effectively just giving the file a new name.
+29Introducing The Command Line
+mv
+/firstname/cracklib-small
+Putting It All Together
+/firstname/words
+We can look at the first 5 lines of the file using
+head -n5
+/firstname/words
+Or we can look at the last 10 lines of the file using
+tail -n10
+/firstname/words
+We could even page through the file using less. (Remember to hit q to exit the pager.)
+less
+/firstname/words
+We can even find how many lines there are in the file by using
+wc -l
+/firstname/words
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 Now we've learned about a large number of commands, let's try performing something useful.
 We'll download a file from the internet, then look through the file.
