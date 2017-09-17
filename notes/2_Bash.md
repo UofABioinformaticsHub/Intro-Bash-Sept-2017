@@ -116,6 +116,7 @@ cd
 ```
 
 ### Relative Vs Absolute Paths
+{:.no_toc}
 
 The approach taken above to move through the directories used what we refer to as a *relative path*, where each move was made relative to the current directory.
 An *absolute path* in `bash` will always begin with the root directory symbol `/`.
@@ -492,7 +493,7 @@ wc hello.txt
 bash terminal.
 Did you remember this trick?*
 
-## Copying and Renaming a File
+## Renaming a File
 
 Later today, we’re going to look through a file containing a list of words.
 Let's download this from the internet and place it in our `Bash_Workshop` folder.
@@ -503,7 +504,7 @@ cd ~/Bash_Workshop
 wget https://uofabioinformaticshub.github.io/Intro-Bash-Sept-2017/files/american-english
 ```
 
-The name for this file isn't as convenient as we'd like, so we can use the command `mv` to rename it.
+The name for this file isn't as convenient as we'd like, so we can use the command `mv` to rename it as the file `words` instead of `american-english`.
 Note that under `bash` to rename a file, we *move* it to the same folder, but with a different filename.
 This is a slightly unconventional way to think about renaming, but once you get used to it it does make sense.
 
