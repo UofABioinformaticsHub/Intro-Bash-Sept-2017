@@ -14,11 +14,8 @@ University of Adelaide
 * TOC
 {:toc}
 
-# Computer Setup
+# Course Material
 
-- Windows Installation Instructions can be found [here](install/windowsInstall)
-- OSX Installation Instructions can be found [here](install/osxInstall)
-
-If you are running `Ubuntu` or another Linux distro, your computer will already be setup ready to go.
+- [1 Introduction](notes/1_Introduction)
 
 [Back To Top](#introduction-to-bash)

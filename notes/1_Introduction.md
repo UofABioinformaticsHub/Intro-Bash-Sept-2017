@@ -54,10 +54,10 @@ The mistakes you will inevitably make will actually be imortant learning steps.
 Additionally, in your work beyond today, you will probably not have any instructions to follow.
 The experience of typing these commands will equip you for future work far better than if you simply copy & paste.
 
-For today’s session, you will also be provided with **red post-it notes**.
-Please use these to signal whether you need help or not by placing them on your monitors.
+For today’s session, you will also be provided with red post-it notes.
+**Please use these to signal whether you need help or not by placing them on your monitors**.
 These are easy for instructors to spot so we can make our way over, although do be aware that there will be times when all instructors are busy.
-This will notably be important as we all set our computers up.
+This will be important as we all set our computers up in the following section.
 
 ## Computer Setup
 
@@ -67,9 +67,11 @@ Althugh this will present numerous challenges from our perspective, we feel this
 
 Instructions for how to setup everything on your own machine are at the following pages.
 Please follow these very carefully, and call an instructor over if you have trouble.
-In particular,the Windows setups may take a while to get sorted.
+In particular, the Windows setups may take a while to get sorted.
 
 - [Mac/OSX](../install/osxInstall)
 - [Windows](../install/windowsInstall)
+
+If you are already running Ubuntu, your computer will already be setup correctly.
 
 [Back](../index)
