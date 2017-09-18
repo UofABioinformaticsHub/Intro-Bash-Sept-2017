@@ -18,6 +18,8 @@ Otherwise, please follow these instructions to install a working version of bash
 
 ![](https://blog.assembla.com/hs-fs/hub/365/file-2181997909-png/Blog/Git_on_windows_blog/Git_Configure_LineEndings.png?t=1505570223016)
 
+## Installing `wget`
+
 After installation, you will need to install the additional tool called `wget`.
 To perform this installation
 
@@ -33,9 +35,26 @@ wget --version
 
 If you receive an error message **use the post-it notes** to ask for help from an instructor
 
+## Installing `nano`
+
+One final editor we need to install is `nano`.
+We'll use this to edit text files directly in the terminal.
+This install can be a bit tricky, so before you move on close `git bash` if you have it open, then re-open `git bash` using your right-click to `Run as administrator`
+
+From there on just paste the following commands:
+```
+wget https://www.nano-editor.org/dist/win32-support/nano-git-0d9a7347243.exe
+mv nano-git-0d9a7347243.exe /c/Program\ Files/Git/usr/bin/nano.exe
+echo 'alias nano="winpty nano"' >> ~/.bash_profile
+```
+
+Close and reopen `git bash` then enter `nano` in the terminal. 
+If you enter what looks like a *blank editor screen*, you've been sucsessful.
+If not, call an instructor over.
+
 ## Installing Notepad++
 
-Although we may not use this much today, an excellent editor for scripts on the Windows OS is *Notepad++*.
+Although we may not use this much today, an excellent alternative editor for scripts on the Windows OS is *Notepad++*.
 A key difference between Windows and Linux/OSX systems is the hidden characters used to denote `end-of-line` (EOL).
 Most editors such as Wordpad, MS Word etc will change these without you knowing and scripts will not be able to be run if edited using these programs.
 *Notepad++* does not do this and using this software will allow you to edit scripts conveniently without breaking them.
