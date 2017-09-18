@@ -45,6 +45,7 @@ Today your helpers will be
 - Jimmy Breen (Robinson Research Institute & Bioinformatics Hub)
 - Robert Qiao, Exe Escobedo (Phoenix Support Team)
 - Terry Bertozzi (SA Museum)
+- Aaron Casey (SAHMRI)
 
 ## Recommendations For Working
 

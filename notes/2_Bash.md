@@ -312,7 +312,9 @@ As this would dump the entire contents of your computer onto the screen, you can
 In order to help us find what options are able to be specified, every command built-in to the shell has a manual, or a help page which can take some time to get familiar with.
 *These help pages are displayed using the pager known as* `less` which essentially turns the terminal window into a text viewer, so that we can display text easily in the terminal window, but with no capacity for us to edit the text.
 
-To display the help page for `ls` enter the command
+To display the help page for `ls` enter the command.
+**NB: For those using git bash under Windows, the man pages are not installed.
+You can instead access the help pages using the --help option after these commands, e.g. ls --help**
 
 ```
 man ls

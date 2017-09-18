@@ -74,7 +74,7 @@ Make sure you're in the `Bash_Workshop` folder, then enter:
 touch wellDone.sh
 ```
 
-Now open this using the using the text editor *nano*:
+Now open this using the using the text editor `nano`:
 
 ```
 nano wellDone.sh
@@ -90,7 +90,7 @@ bash wellDone.sh
 
 ### Setting File Permissions
 
-Unfortunately, this script cannot be executed without calling `bash` explicitly but we can also enable execution of the file directly by setting the execute flag in the file permissions.
+Unfortunately, this script cannot be executed without calling `bash` explicitly, but we can also enable execution of the file directly by setting the *execute flag* in the file permissions.
 First let's look at what permissions we have:
 
 ```
@@ -110,8 +110,8 @@ You should see output similar to this:
 
 *Interpret the final triplet? What are these permissions indicating, and for whom?*
 
-As you can see, the `x` flag has not been set in any of the triplets, so this file is not executable as a script yet.
-To do this, we simply need to set the `x` flag, then we'll look again using long-listing format.
+As you can see, the `x` flag has not been set in any of the triplets, so this file is yet not executable as a script.
+To do this, we simply need to set the `x` flag using the `chmod` command, then we'll look again using long-listing format.
 
 ```
 chmod +x wellDone.sh
@@ -167,7 +167,7 @@ ls -lh *sh
 {:.no_toc}
 *What will the final 4 in the above settings do?*
 
-### Modifying our script
+### Modifying our script to receive input
 
 In the initial script we used two variables `${ME}` and `${MESSAGE}`.
 Now let's change the variable `${ME}` in the script to read as `ME=$1`.
@@ -178,6 +178,8 @@ cp wellDone.sh wellDone2.sh
 nano wellDone2.sh
 ```
 
+(Change the `ME` variable now...)
+
 We may need to set the execute permissions again.
 
 ```
@@ -185,7 +187,7 @@ chmod +x wellDone2.sh
 ls -lh *sh
 ```
 
-This time we have set the script to *receive input from stdin* (i.e. the terminal), and we will need to supply a value, which will then be placed in the variable `${ME}`.
+This time we have set the script to *receive input from stdin* (i.e. the terminal), and we will need to supply a value, the first of which will be placed in the variable `${ME}`.
 Choose whichever random name you want (or just use "Boris" as in the example) and enter the following
 ```
 ./wellDone2.sh Boris
@@ -223,6 +225,145 @@ for f in ${FILES};
 Save this as a script in the `Bash_Workshop` folder called `lineCount.sh`.
 **Add comments** where you think you need them to make sure you understand what's happening.
 
+## Using the `%` shortcut
+
+Before we write our net simple script, we'll need to download a pair of `fasta` files.
+
+```
+wget -qO- "https://universityofadelaide.box.com/shared/static/d4rs2qphctukwxwg2y6ypdii9i4g4bo8.gz" | tar xvz -C ./
+```
+
+This will give you two files `SRR5882797_R1.fa` and `SRR5882797_R2.fa` which are paired fastq files.
+Let's write a script to change the suffix of both of these from `.fa` to `.fasta`
+
+```
+touch changeSuffix.sh
+nano changeSuffix.sh
+```
+
+Once the `nano` editor has opened, enter the following script before *writing out* (`Ctrl+o`).
+
+```
+#!/bin/bash
+
+OLDSUFFIX=$1
+NEWSUFFIX=$2
+echo "Change all files of suffix" $OLDSUFFIX "to " $NEWSUFFIX
+for f in *.${OLDSUFFIX};
+  do
+    F=${f%.${OLDSUFFIX}}.${NEWSUFFIX}
+    echo "Rename file" $f "to" $F
+    mv $f $F
+  done
+echo "DONE"
+```
+
+While this is essentially  trivial script, note the line `F=${f%.${OLDSUFFIX}}.${NEWSUFFIX}`.
+Here we have use the `%` like a pair of scissors and we have *snipped* the `.${OLDSUFFIX}` end off the filename, and replaced it with `.${NEWSUFFIX}`.
+In bioinformatics we often have samples which go through multiple steps and this can be very useful for taking from `fastq` to `bam` to `sorted.bam` or other similar data flows.
+
+Let's make the file executable, then run it in our directory.
+
+```
+chmod +x changeSuffix.sh
+./changeSuffix.sh fa fasta
+```
+
+This will change the suffic of every `.fa` file to `.fasta`.
+
+#### Task
+{:.no_toc}
+
+*Use this script to return these suffixes to `.fa`*
+
+#### Task
+{:.no_toc}
+
+Below is the main engine of a script, which we'd like you to complete.
+In your script, return a tab-delimited output where each line contains the name of the fasta file in the first column, and the second column contains the number of sequences in the file.
+
+```
+for fasta in *.fa
+ do
+   grep -c "^>" ${fasta} >> ${fasta}.count
+done
+```
+
+# More Advanced Scripts
+
+
+## Loops and paired-end reads
+
+Above you learnt how to use a `for` loop in a `bash` script, and as you can see its pretty easy to run through a process one by one using a single variable.
+In the task above we used:
+
+```
+for fasta in *.fa
+ do
+   grep -c "^>" ${fasta} >> ${fasta}.count
+done
+```
+
+This loop takes your fasta sequence and counts the number of sequences in it.
+Because every sequence starts with a header line (which also starts with “>”), you can just count the lines that start with the character `>`. Easy
+
+However, what happens when you need to iterate over two paired-fasta files?
+And not only that, you might need to do something specific to each file.
+This often happens when you have paired-end sequencing data, where you have sequence from the forward strand of the DNA insert, and a sequence from the reverse strand).
+Below we are going to run through an example of using paired-end fasta files.
+
+## Paired-end BLAST script
+A common task in any Bioinformatics pipeline setup, whether you’re analysing Sanger or Next-generation sequencing data, is answering the following question:
+
+*“I have a sequence, so how the hell do I find out what the hell this is??”*
+
+The answer is the Basic Local Alignment Search Tool (BLAST). BLAST is one of the most widely used tools and processes in computational biology, and its two publications that describe the process are [actually both in the top 20 all time for scientific citations!!](http://www.nature.com/news/the-top-100-papers-1.16224).
+This process uses local alignment to match a sequence against an existing sequence database.
+Using the large global sequence databases, from places such as NCBI’s nucleotide or protein archive (or Genbank), we can run BLAST to match any sequence.
+
+The BLAST+ toolkit, [which is available from NCBI](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download), has the ability to run remote BLAST searches against those large databases, but for this example we are going to BLAST some paired-end sequences against its target genome.
+
+If you'd like to try running the script, download the BLAST+ toolkit for your system then call an instructor over to help you install it.
+*This may be quite challenging for Windows Users, but we're game if you're game.*
+
+Below is our script which:
+
+1. Downloads the genome (Arabidopsis thaliana)
+2. Creates the database
+3. Iterates through R1 and R2 fasta files and runs BLASTn against each file
+
+Note how we can specify each of the paired-end reads by using variable replacement in the for loop, where ${fasta} indicates the normal target, and ${fasta/R1/R2} is the second target where we’ve replaced R1 with R2
+
+```
+#!/bin/bash
+
+DIRECTORY=`pwd`
+
+# Download the genome
+wget -c ftp://ftp.ensemblgenomes.org/pub/plants/current/fasta/arabidopsis_thaliana/dna/Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
+
+cd ${DIRECTORY}
+
+# Create the blastdb
+gunzip Arabidopsis_thaliana.TAIR10.dna.toplevel.fa.gz
+makeblastdb -in Arabidopsis_thaliana.TAIR10.dna.toplevel.fa \
+   -dbtype nucl \
+   -parse_seqids \
+   -out Athaliana_BLAST_db
+
+for fasta in *_R1*.fa
+ do
+   # Lets run the R1 fasta files
+   blastn -db Athaliana_BLAST_db -query ${fasta} \
+      -outfmt 6 -max_target_seqs 1 -max_hsps 1 \
+      -out $(basename ${fasta} .fa).blastn.txt
+
+   # Lets run the R2 fasta files
+   blastn -db Athaliana_BLAST_db -query ${fasta/R1/R2} \
+      -outfmt 6 -max_target_seqs 1 -max_hsps 1 \
+      -out $(basename ${fasta} .fa).blastn.txt
+done
+```
 
 ## A More Advanced Script
 
