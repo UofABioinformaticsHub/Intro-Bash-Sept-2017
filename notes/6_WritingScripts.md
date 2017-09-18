@@ -288,3 +288,4 @@ for fasta in *.fa
    grep -c "^>" ${fasta} >> ${fasta}.count
 done
 ```
+[Home](../)

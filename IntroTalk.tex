@@ -1,0 +1,128 @@
+\documentclass[11pt]{beamer}
+\usetheme{Singapore}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{url}
+
+\usepackage{setspace}% http://ctan.org/pkg/setspace
+\let\oldframetitle\frametitle% Store old \frametitle in \oldframetitle
+\renewcommand{\frametitle}[1]{% Redefine \frametitle
+  \oldframetitle{#1}\setstretch{2}}
+
+\author{Steve Pederson\\
+Bioinformatics Hub\\
+Level 4, Santos Petroleum Engineering Building}
+\title{Introduction To Bash \\
+Using the Terminal For Bioinformatics}
+%\setbeamercovered{transparent} 
+%\setbeamertemplate{navigation symbols}{} 
+%\logo{} 
+\institute{University of Adelaide} 
+\date{19th September, 2017} 
+%\subject{} 
+\begin{document}
+
+\begin{frame}
+\titlepage
+\end{frame}
+
+\begin{frame}{Today's Tutors}
+\begin{itemize}
+\small
+	\item Dr Hien To (Bioinformatics Hub, Adelaide University)
+	\item Dr Jimmy Breen (Robinson Research Institute / Bioinformatics Hub)
+	\item Dr Terry Bertozzi (SA Museum)
+	\item Dr Aaron Casey (SAHMRI)
+	\item Alastair Ludington (Bioinformatics Hub, Adelaide University)
+	\item Robert Qiao \& Exe Escobedo (Phoenix Support Team)
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Why use the command line?}
+	\begin{itemize}
+		\item We can work with huge files
+		\item All HPC systems require basic scripting skills
+		\item We retain more control over data and processes
+		\item You better understand every process you've done
+		\item It's easy \& fun!
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Why use the command line?}
+\begin{itemize}
+	\item Science is littered with retractions as a result of GUI mistakes
+	\begin{itemize}
+		\item Google ``Keith Baggerly"
+	\end{itemize}
+	\item Reproducible Research $\implies$ Script Everything!
+	\item Nothing is forgotten \& you can find any errors
+	\item Common workflows can be easily automated
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Today's Topics}
+\begin{enumerate}
+	\item We'll start very simple with copying files, making directories etc, how do we access internal help pages...
+	\item Important techniques for working with files
+	\item \textit{Regular Expressions} for text searching
+	\item Two useful tools: \texttt{sed} \& \texttt{awk}
+	\item Writing \textit{Shell Scripts}
+\end{enumerate}
+\end{frame}
+
+
+\begin{frame}{Today's Schedule}
+\begin{itemize}
+  \item Four 90 minute sessions
+  \item Today is very much self-guided, working at your own pace
+  \item Use the Post-it Notes
+  \begin{itemize}
+	\item Yellow/Red: Help! 
+  \end{itemize}
+  \item Ask lots of questions!
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Setup}
+\begin{itemize}
+	\item Setup is often a bit bumpy
+	\item Using local installations for the first time
+	\item We have 4 emergency USB drives only
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Today's Notes}
+\begin{itemize}
+	\item Today's notes are available at \url{https://uofabioinformaticshub.github.io/Intro-Bash-Sept-2017/}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Most common problems}
+
+\begin{itemize}
+	\item You can't tell the letter `\texttt{l}' from the number `\texttt{1}'
+	\item Always, always, always use ``Tab auto-complete"
+\end{itemize}
+
+\end{frame}
+
+
+\begin{frame}{After Today}
+	\begin{itemize}
+		\item Today is \textit{An Introduction!}
+		\item Don't be afraid to ask for help (Bioinformatics Hub)
+		\item Phoenix support in the Bioinformatics Hub Thurs 11am-1pm
+		\item An excellent resource is \url{www.linuxcommand.org/tlcl.php}
+	\end{itemize}
+\end{frame}
+
+
+\end{document}

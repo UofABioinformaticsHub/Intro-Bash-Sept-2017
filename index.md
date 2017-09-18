@@ -10,6 +10,8 @@ Room 422
 Horace Lamb Building  
 University of Adelaide
 
+[Introductory Talk](IntroTalk.pdf)
+
 # Course Material
 
 - [1 Introduction](notes/1_Introduction)

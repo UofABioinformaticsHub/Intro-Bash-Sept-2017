@@ -224,3 +224,4 @@ While we’re at it, let’s save the output as a file:
 ```
 awk '{if (($5 - $4 > 1000) && ($3 == "gene")) print $1, $2, $4, $5, $9}' dm6.gff > awkout.txt
 ```
+[Home](../)

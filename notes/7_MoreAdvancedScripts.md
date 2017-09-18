@@ -190,3 +190,5 @@ echo Done
 
 We could specify any number of options to our script.
 For example, we may wish to change the `BDGP6` to be more flexible for any other genome using a flag and input such as `-g genomeCode`.
+
+[Home](../)
