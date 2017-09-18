@@ -50,7 +50,8 @@ echo 'alias nano="winpty nano"' >> ~/.bash_profile
 
 Close and reopen `git bash` then enter `nano` in the terminal. 
 If you enter what looks like a *blank editor screen*, you've been sucsessful.
-If not, call an instructor over.
+You can exit `nano` by entering `Ctrl+x`.
+If you have not been successful, call an instructor over.
 
 ## Installing Notepad++
 
