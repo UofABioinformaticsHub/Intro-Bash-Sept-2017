@@ -156,7 +156,7 @@ Again, if the file doesn't already exist it will be created, but this time if th
 Let's see this in action.
 
 ```
-echo 'It's me.' >> hello.txt
+echo "It's me." >> hello.txt
 cat hello.txt
 ```
 
