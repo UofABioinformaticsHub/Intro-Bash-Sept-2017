@@ -73,7 +73,7 @@ for fasta in *_R1*.fa
    # Lets run the R2 fasta files
    blastn -db Athaliana_BLAST_db -query ${fasta/R1/R2} \
       -outfmt 6 -max_target_seqs 1 -max_hsps 1 \
-      -out $(basename ${fasta} .fa).blastn.txt
+      -out $(basename ${fasta/R1/R2} .fa).blastn.txt
 done
 ```
 
