@@ -33,9 +33,15 @@ If you’ve ever heard of the phrase *shell scripts*, this refers to a series of
 # Finding your way around
 
 Firstly we need to open a terminal as we did during the set-up steps.
-You will notice some text describing your computer of the form
+Mac/Linux users will notice some text describing your computer of the form
 
  `user@computer:~$`
+
+Windows users will see  
+
+`MINGW64:~`
+
+or something similar.
 
 
 The tilde (`~`) represents your current directory (see below), whilst the dollar sign just indicates the end of the address & the beginning of where you will type commands.
@@ -97,13 +103,7 @@ one more time we should be in the root directory of the file system.
 Try this and print the working directory again (`pwd`).
 The output should be the root directory given as `/`.
 
-We can change back to the original location by entering one of either:
-
-```
-cd /home/your_login_name
-```
-
-(please use your actual login) or
+We can change back to the original location by entering one of:
 
 ```
 cd ~

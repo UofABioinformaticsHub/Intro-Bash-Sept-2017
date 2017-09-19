@@ -215,7 +215,7 @@ COUNT=0
 for f in ${FILES};
   do
     ((COUNT++))
-    ln=$(wc -l ${f} | sed -r 's/([0-9]*).+/\1/g')
+    ln=$(wc -l ${f} | sed -r 's/([0-9]+).+/\1/g')
     echo "File number ${COUNT} (${f}) has ${ln} lines"
   done
 ```

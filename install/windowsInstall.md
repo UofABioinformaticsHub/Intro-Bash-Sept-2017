@@ -23,7 +23,7 @@ Otherwise, please follow these instructions to install a working version of bash
 After installation, you will need to install the additional tool called `wget`.
 To perform this installation
 
-1. Download the [32-bit](https://eternallybored.org/misc/wget/current/wget.exe) or [62-bit](https://eternallybored.org/misc/wget/current/wget64.exe) file ending in `.exe`
+1. Download the [32-bit](https://eternallybored.org/misc/wget/current/wget.exe) or [64-bit](https://eternallybored.org/misc/wget/current/wget64.exe) file ending in `.exe`
 2. If you downloaded the file `wget64.exe`, please rename the file as `wget.exe`
 3. Move this file to `C:\Program Files\Git\mingw64\bin\`
 
@@ -48,7 +48,7 @@ mv nano-git-0d9a7347243.exe /c/Program\ Files/Git/usr/bin/nano.exe
 echo 'alias nano="winpty nano"' >> ~/.bash_profile
 ```
 
-Close and reopen `git bash` then enter `nano` in the terminal. 
+Close and reopen `git bash` then enter `nano` in the terminal.
 If you enter what looks like a *blank editor screen*, you've been sucsessful.
 You can exit `nano` by entering `Ctrl+x`.
 If you have not been successful, call an instructor over.
