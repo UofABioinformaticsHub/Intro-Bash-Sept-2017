@@ -35,6 +35,12 @@ Using the large global sequence databases, from places such as NCBI’s nucleoti
 
 The BLAST+ toolkit, [which is available from NCBI](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=Download), has the ability to run remote BLAST searches against those large databases, but for this example we are going to BLAST some paired-end sequences against its target genome.
 
+To install `blast` on Ubuntu, enter the command.
+
+```
+sudo apt install ncbi-blast+
+```
+
 If you'd like to try running the script, download the BLAST+ toolkit for your system then call an instructor over to help you install it.
 *This may be quite challenging for Windows Users, but we're game if you're game.*
 
